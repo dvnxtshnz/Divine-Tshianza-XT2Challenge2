@@ -6,5 +6,41 @@
 
 	<link rel="icon" href="images/favicon.svg">
 
+	<link href="stylesheet/layout.css" type="text/css" rel="stylesheet" />
+
+	<link href="stylesheet/grid.css" type="text/css" rel="stylesheet" />
+
+	<script src="javascript/script.js"></script>
+
 	<title>SpaceX klok</title>
 </head>
+<body>
+	<section id="container">
+		<!-- - - - - - - - - - - - - - - - - - - :: TOP CONTENT
+		- - - - - - - - - - - - - - - - - - - -->
+		<header>
+			<!-- logo SpaceX -->
+			<div id="logo"></div>
+		</header>
+		<!-- - - - - - - - - - - - - - - - - - - :: HOOFDCONTENT
+		- - - - - - - - - - - - - - - - - - - -->
+		<section class="hoofdContent">
+			<section class="dagdeelTekst">
+				<!-- dagdeel begroeting -->
+				<h1 id="begroeting"></h1>
+				<!-- huidige datum -->
+				<h2 id="datum"></h2>
+				<!-- analoge klok -->
+				<p id="klok"></p>
+			</section>
+		</section>
+		<!-- maan of zon -->
+		<section>
+			<div id="dagdeelAfbeeldingTop" class="dagdeelAfbeelding1"></div>
+		</section>
+		<!-- bergen -->
+		<section>
+			<div id="dagdeelAfbeeldingBottom" class="dagdeelAfbeelding2"></div>
+		</section>
+	</section>
+</body>

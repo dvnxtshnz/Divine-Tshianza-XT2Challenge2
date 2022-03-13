@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap');
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0px;
+}
+
+h1, h2 {
+  font-size: 1.25em;
+  line-height: 0.3;
+}
+
+h2 {
+  font-weight: 300;
+  color: #ffffff;
+}
+
+p {
+  font-size: 4.6em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+
+  text-shadow: /* voegt glow effect toe */
+    0 0 5px rgba(255, 255, 255, 0.50),
+    0 0 30px rgba(255, 255, 255, 0.50),
+    0 0 20px rgba(255, 255, 255, 0.50),
+    0 0 40px rgba(255, 255, 255, 0.50),
+    0 0 60px rgba(255, 255, 255, 0.50);
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - -
+:: TOP CONTENT
+- - - - - - - - - - - - - - - - - - - - - - */
+header {
+	padding-top: 10%;
+	padding-bottom: 5%;
+}
+
+.logoWit {
+	background-image: url('images/logo-wit.svg');
+}
+
+.logoDonker {
+	background-image: url('images/logo-donker.svg');
+}
+
+.logoWit, .logoDonker {
+  height: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200px;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - -
+:: HOOFDCONTENT
+- - - - - - - - - - - - - - - - - - - - - - */
+.hoofdContent {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "top"
+  "middle"
+  "bottom";
+}
+
+.dagdeelTekst {
+  grid-area: top;
+}
+
+.dagdeelAfbeelding1 {
+  grid-area: middle;
+}
+
+.dagdeelAfbeelding2 {
+  grid-area: bottom;
+}
+
+/* achtegrondkleuren per dagdeel */
+.nachtKleur {
+  background-color: #010920;
+}
+
+.ochtendKleur {
+  background-color: #97B9FF;
+}
+
+.middagKleur {
+  background-color: #83D3FF;
+}
+
+.avondKleur {
+  background-color: #E8C276;
+}
+
+/* tekstkleur begroeting per dagdeel */
+.tekstWit {
+  color: #ffffff;
+}
+
+.tekstDonker {
+  color: #10225B;
+}
+
+.tekstWit, .tekstDonker {
+  animation-name: slideRecht;
+  animation-duration: 1s;
+}
+
+@keyframes slideRecht {
+  from {
+    margin-left: -100%;
+  }
+
+  to {
+    margin-left: 0;
+  }
+}
+
+/* maan of zon */
+.nachtAfbeeldingTop {
+  background-image: url('images/maan.png');
+}
+
+.ochtendAfbeeldingTop, .middagAfbeeldingTop, .avondAfbeeldingTop {
+  background-image: url('images/zon.png');
+}
+
+.nachtAfbeeldingTop, .ochtendAfbeeldingTop, .middagAfbeeldingTop, .avondAfbeeldingTop {
+  padding-top: 15%;
+  padding-bottom: 50%;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 75%;
+  animation: bounceIn 5s ease;
+}
+
+@keyframes bounceIn {
+  from {
+    transform:translateY(-500%);
+  }
+
+  to { 
+    transform: translateX(0);
+  }
+}
+
+/* bergkleuren per dagdeel */
+.nachtAfbeeldingBottom {
+  background-image: url('images/mountains-nacht.svg');
+}
+
+.ochtendAfbeeldingBottom {
+  background-image: url('images/mountains-ochtend.svg');
+}
+
+.middagAfbeeldingBottom {
+  background-image: url('images/mountains-middag.svg');
+}
+
+.avondAfbeeldingBottom {
+  background-image: url('images/mountains-avond.svg');
+}
+
+.nachtAfbeeldingBottom, .ochtendAfbeeldingBottom, .middagAfbeeldingBottom, .avondAfbeeldingBottom {
+  padding-top: 13%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - -
+:: RESPONSIVE
+- - - - - - - - - - - - - - - - - - - - - - */
+/* - - Medium devices (768 and up) - - */
+@media only screen and (min-width: 768px) {
+  header {
+    padding-top: 7%;
+  }
+
+  .logoWit, .logoDonker {
+    background-size: 30%;
+  }
+
+  p {
+    font-size: 6.2em;
+  }
+}
