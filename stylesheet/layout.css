@@ -20,27 +20,48 @@ p {
   font-weight: 600;
   color: rgba(255, 255, 255, 0.75);
 
-  text-shadow: /* voegt glow effect toe */
+  text-shadow:
+  0 0 5px rgba(255, 255, 255, 0),
+  0 0 30px rgba(255, 255, 255, 0),
+  0 0 20px rgba(255, 255, 255, 0),
+  0 0 40px rgba(255, 255, 255, 0),
+  0 0 60px rgba(255, 255, 255, 0);
+
+  animation: glowEffect 2s ease-in-out 3s infinite alternate; /* voegt glow effect toe */
+}
+
+@keyframes glowEffect {
+  from {
+    text-shadow:
+    0 0 5px rgba(255, 255, 255, 0),
+    0 0 30px rgba(255, 255, 255, 0),
+    0 0 20px rgba(255, 255, 255, 0),
+    0 0 40px rgba(255, 255, 255, 0),
+    0 0 60px rgba(255, 255, 255, 0);
+  }
+  to {
+    text-shadow:
     0 0 5px rgba(255, 255, 255, 0.50),
     0 0 30px rgba(255, 255, 255, 0.50),
     0 0 20px rgba(255, 255, 255, 0.50),
     0 0 40px rgba(255, 255, 255, 0.50),
     0 0 60px rgba(255, 255, 255, 0.50);
+  }
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - -
-:: TOP CONTENT
+:: TOPCONTENT
 - - - - - - - - - - - - - - - - - - - - - - */
 header {
 	padding-top: 10%;
 	padding-bottom: 5%;
 }
 
-.logoWit {
+.logoWit { /* kleur logo tussen 00:00 - 05:59 uur */
 	background-image: url('images/logo-wit.svg');
 }
 
-.logoDonker {
+.logoDonker { /* kleur logo tussen 06:00 - 23:59 uur */
 	background-image: url('images/logo-donker.svg');
 }
 
@@ -55,8 +76,6 @@ header {
 :: HOOFDCONTENT
 - - - - - - - - - - - - - - - - - - - - - - */
 .hoofdContent {
-  width: 80%;
-  margin: auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -65,15 +84,19 @@ header {
   "bottom";
 }
 
-.dagdeelTekst {
+.dagdeelTekst { /* sectie begroeting, datum en klok */
+  width: 80%;
+  margin: auto;
   grid-area: top;
 }
 
-.dagdeelAfbeelding1 {
+.dagdeelAfbeelding1 { /* sectie maan en zon */
+  width: 80%;
+  margin: auto;
   grid-area: middle;
 }
 
-.dagdeelAfbeelding2 {
+.dagdeelAfbeelding2 { /* sectie bergen */
   grid-area: bottom;
 }
 
@@ -104,8 +127,7 @@ header {
 }
 
 .tekstWit, .tekstDonker {
-  animation-name: slideRecht;
-  animation-duration: 1s;
+  animation: slideRecht 1s;
 }
 
 @keyframes slideRecht {
@@ -118,7 +140,7 @@ header {
   }
 }
 
-/* maan of zon */
+/* maan en zon */
 .nachtAfbeeldingTop {
   background-image: url('images/maan.png');
 }
@@ -133,16 +155,16 @@ header {
   background-repeat: no-repeat;
   background-position: right;
   background-size: 75%;
-  animation: bounceIn 5s ease;
+  animation: slideDown 3s ease;
 }
 
-@keyframes bounceIn {
+@keyframes slideDown {
   from {
-    transform:translateY(-500%);
+    transform: translateY(-500%);
   }
 
   to { 
-    transform: translateX(0);
+    transform: translateY(0%);
   }
 }
 
@@ -173,7 +195,7 @@ header {
 /* - - - - - - - - - - - - - - - - - - - - - -
 :: RESPONSIVE
 - - - - - - - - - - - - - - - - - - - - - - */
-/* - - Medium devices (768 and up) - - */
+/* Medium devices - Tablet portrait (768px and up) */
 @media only screen and (min-width: 768px) {
   header {
     padding-top: 7%;
@@ -185,5 +207,26 @@ header {
 
   p {
     font-size: 6.2em;
+  }
+}
+
+/* Medium devices - Tablet landscape (1024px and up) */
+@media only screen and (min-width: 1024px) {
+  .hoofdContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr ;
+    grid-column-gap: 0px;
+    grid-template-areas:
+    "top middle"
+    "bottom bottom";
+  }
+
+  .dagdeelTekst {
+    width: 60%;
+  }
+
+  .dagdeelAfbeelding1 {
+    padding-right: 80px;
   }
 }

@@ -20,6 +20,8 @@ function toonAchtegrondkleur() {
 	else if (uren >= 18 && uren < 24) {
 		achtegrondkleur.classList.add("avondKleur");
 	}
+
+	setInterval(toonAchtegrondkleur, 1000);
 }
 
 // begroeting per dagdeel
@@ -39,6 +41,8 @@ function toonBegroeting() {
 	else if (uren >= 18 && uren < 24) {
 		document.getElementById("begroeting").innerHTML = "Good evening!";
 	}
+
+	setInterval(toonBegroeting, 1000);
 }
 
 // datum
@@ -75,6 +79,8 @@ function toonDatum() {
 	huidigeDatum = weekDagen[datum.getDay()] + ' ' + dagNummer + ' ' + maanden[datum.getMonth()] + ' ' + (fourdigits(datum.getYear()));
 
 	document.getElementById("datum").innerHTML = huidigeDatum;
+
+	setInterval(toonDatum, 1000);
 }
 
 // digitale klok
@@ -107,6 +113,8 @@ function toonTekstKleur() {
 		logoKleur.classList.add("logoDonker");
 		begroetingKleur.classList.add("tekstDonker");
 	}
+
+	setInterval(toonTekstKleur, 1000);
 }
 
 // achtergrondafbeelding per dagdeel
@@ -132,8 +140,9 @@ function toonAchtergrondAfbeelding() {
 	else if (uren >= 18 && uren < 24) {
 		achtergrondAfbeeldingTop.classList.add("avondAfbeeldingTop");
 		achtergrondAfbeeldingBottom.classList.add("avondAfbeeldingBottom");
-
 	}
+
+	setInterval(toonAchtergrondAfbeelding, 1000);
 }
 
 window.onload = function() {
